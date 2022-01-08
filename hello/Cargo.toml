@@ -1,0 +1,17 @@
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+authors = ["Daohan Chong <wildcat.name@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+name = "hello"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+uniffi = "0.16.0"
+
+[build-dependencies]
+uniffi_build = "0.16.0"
