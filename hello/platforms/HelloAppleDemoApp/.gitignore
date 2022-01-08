@@ -6,3 +6,4 @@ xcuserdata/
 *.xccheckout
 
 HelloFFI.xcframework
+Hello.swift

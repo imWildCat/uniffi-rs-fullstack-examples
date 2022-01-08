@@ -16,7 +16,8 @@ assemble-frameworks:
 
 xcframeowrk:
 	lipo -create target/x86_64-apple-ios/release/HelloFFI.framework/HelloFFI target/aarch64-apple-ios-sim/release/HelloFFI.framework/HelloFFI -output target/aarch64-apple-ios-sim/release/HelloFFI.framework/HelloFFI
-	xcodebuild -create-xcframework -framework target/aarch64-apple-ios/release/HelloFFI.framework -framework target/aarch64-apple-ios-sim/release/HelloFFI.framework -output target/Todo.xcframework
+	xcodebuild -create-xcframework -framework target/aarch64-apple-ios/release/HelloFFI.framework -framework target/aarch64-apple-ios-sim/release/HelloFFI.framework -output target/HelloFFI.xcframework
 
 cp-xcframeowrk-source:
-	cp -r target/Todo.xcframework 
+	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp
+	cp src/Hello.swift platforms/HelloAppleDemoApp
