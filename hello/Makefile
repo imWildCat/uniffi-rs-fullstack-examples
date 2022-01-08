@@ -7,6 +7,7 @@ build-targets:
 
 bindgen-swift:
 	uniffi-bindgen generate src/hello.udl --language swift
+	sed -i '' 's/module\ HelloFFI/framework\ module\ HelloFFI/' src/HelloFFI.modulemap
 
 assemble-frameworks:
 	find . -type d -name HelloFFI.framework -exec rm -rf {} \;
@@ -19,5 +20,5 @@ xcframeowrk:
 	xcodebuild -create-xcframework -framework target/aarch64-apple-ios/release/HelloFFI.framework -framework target/aarch64-apple-ios-sim/release/HelloFFI.framework -output target/HelloFFI.xcframework
 
 cp-xcframeowrk-source:
-	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp
+	cp target/HelloFFI.xcframework platforms/HelloAppleDemoApp
 	cp src/Hello.swift platforms/HelloAppleDemoApp
