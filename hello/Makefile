@@ -20,5 +20,5 @@ xcframeowrk:
 	xcodebuild -create-xcframework -framework target/aarch64-apple-ios/release/HelloFFI.framework -framework target/aarch64-apple-ios-sim/release/HelloFFI.framework -output target/HelloFFI.xcframework
 
 cp-xcframeowrk-source:
-	cp target/HelloFFI.xcframework platforms/HelloAppleDemoApp
+	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp
 	cp src/Hello.swift platforms/HelloAppleDemoApp
