@@ -64,6 +64,7 @@
 		5E4DA3C02789CCE80079CD8C /* HelloAppleDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAppleDemoAppUITests.swift; sourceTree = "<group>"; };
 		5E4DA3C22789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAppleDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E4DA3E1278A764D0079CD8C /* Hello */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Hello; sourceTree = "<group>"; };
+		5E4DA3E7278A94F80079CD8C /* HelloAppleDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloAppleDemoApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 		5E4DA39E2789CCE70079CD8C /* HelloAppleDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5E4DA3E7278A94F80079CD8C /* HelloAppleDemoApp.entitlements */,
 				5E4DA39F2789CCE70079CD8C /* AppDelegate.swift */,
 				5E4DA3A12789CCE70079CD8C /* SceneDelegate.swift */,
 				5E4DA3A32789CCE70079CD8C /* ViewController.swift */,
@@ -471,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HelloAppleDemoApp/HelloAppleDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DH5UQL44AR;
@@ -489,6 +492,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.catstudio.HelloAppleDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HelloAppleDemoApp/HelloAppleDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DH5UQL44AR;
@@ -518,6 +523,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.catstudio.HelloAppleDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
