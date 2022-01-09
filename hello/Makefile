@@ -1,5 +1,12 @@
 STATIC_LIB_NAME := libhello.a
 
+all:
+	@make build-targets
+	@make bindgen-swift
+	@make assemble-framework
+	@make xcframeowrk
+	@make cp-xcframeowrk-source
+
 build-targets:
 	cargo build --release --target x86_64-apple-ios
 	cargo build --release --target aarch64-apple-ios-sim
@@ -20,5 +27,5 @@ xcframeowrk:
 	xcodebuild -create-xcframework -framework target/aarch64-apple-ios/release/HelloFFI.framework -framework target/aarch64-apple-ios-sim/release/HelloFFI.framework -output target/HelloFFI.xcframework
 
 cp-xcframeowrk-source:
-	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp
-	cp src/Hello.swift platforms/HelloAppleDemoApp
+	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp/Hello/Sources
+	cp src/Hello.swift platforms/HelloAppleDemoApp/Hello/Sources/Hello

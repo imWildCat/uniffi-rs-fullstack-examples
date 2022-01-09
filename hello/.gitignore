@@ -16,3 +16,5 @@ Cargo.lock
 src/HelloFFI.modulemap
 src/Hello.swift
 src/HelloFFI.h
+
+HelloAppleDemoApp.xcodeproj/project.xcworkspace/xcuserdata/wildcat.xcuserdatad

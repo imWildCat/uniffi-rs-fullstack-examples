@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Test Hello",
+      "program": "/Applications/Xcode.app/Contents/Developer/usr/bin/xctest",
+      "args": [
+        ".build/debug/HelloPackageTests.xctest"
+      ],
+      "cwd": "${workspaceFolder:Hello}",
+      "preLaunchTask": "swift: Build All"
+    }
+  ]
+}

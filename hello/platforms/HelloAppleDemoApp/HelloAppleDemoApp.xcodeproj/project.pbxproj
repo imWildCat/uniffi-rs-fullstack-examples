@@ -17,7 +17,8 @@
 		5E4DA3C12789CCE80079CD8C /* HelloAppleDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3C02789CCE80079CD8C /* HelloAppleDemoAppUITests.swift */; };
 		5E4DA3C32789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3C22789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift */; };
 		5E4DA3D52789D03E0079CD8C /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3D32789D03E0079CD8C /* Hello.swift */; };
-		5E4DA3D62789D03E0079CD8C /* HelloFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */; };
+		5E4DA3D7278A5D700079CD8C /* HelloFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */; };
+		5E4DA3D8278A5D700079CD8C /* HelloFFI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,20 @@
 			remoteInfo = HelloAppleDemoApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E4DA3D9278A5D700079CD8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E4DA3D8278A5D700079CD8C /* HelloFFI.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5E4DA39C2789CCE70079CD8C /* HelloAppleDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloAppleDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4DA3D62789D03E0079CD8C /* HelloFFI.xcframework in Frameworks */,
+				5E4DA3D7278A5D700079CD8C /* HelloFFI.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +159,7 @@
 				5E4DA3982789CCE70079CD8C /* Sources */,
 				5E4DA3992789CCE70079CD8C /* Frameworks */,
 				5E4DA39A2789CCE70079CD8C /* Resources */,
+				5E4DA3D9278A5D700079CD8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,6 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DH5UQL44AR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HelloAppleDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,6 +471,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DH5UQL44AR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HelloAppleDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -481,6 +500,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
