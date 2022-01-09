@@ -15,5 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: |
-        cd hello
-        make all
+          make prepare-apple
+          cd hello
+          make all
