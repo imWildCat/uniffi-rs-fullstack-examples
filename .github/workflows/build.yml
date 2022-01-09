@@ -18,3 +18,10 @@ jobs:
           make prepare-apple
           cd hello
           make all
+
+    - name: 'Upload xcframework'
+      uses: actions/upload-artifact@v2
+      with:
+        name: HelloFFI.xcframework
+        path: hello/target/HelloFFI.xcframework
+        retention-days: 7
