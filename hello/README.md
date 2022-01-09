@@ -2,10 +2,15 @@
 
 A shared library for the todo list application, which can be used for Android, iOS and other platforms.
 
+## Prerequisites
+
+Please refer to the root [README.md](../README.md).
 
 ## Binary Size
 
 ### iOS
+
+- Generate binaries, xcframework and Swift binding: `make all`
 
 #### With Rust binary: 503K
 
