@@ -24,7 +24,6 @@ let package = Package(
             dependencies: []
         ),
          .binaryTarget(name: "HelloFFI", path: "Sources/HelloFFI.xcframework"),
-//        .binaryTarget(name: "Todo", path: "Sources/Todo.xcframework"),
         .testTarget(
             name: "HelloTests",
             dependencies: ["Hello"]

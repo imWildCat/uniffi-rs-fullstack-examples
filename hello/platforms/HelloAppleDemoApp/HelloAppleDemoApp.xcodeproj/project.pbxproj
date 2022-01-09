@@ -16,9 +16,7 @@
 		5E4DA3B72789CCE80079CD8C /* HelloAppleDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3B62789CCE80079CD8C /* HelloAppleDemoAppTests.swift */; };
 		5E4DA3C12789CCE80079CD8C /* HelloAppleDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3C02789CCE80079CD8C /* HelloAppleDemoAppUITests.swift */; };
 		5E4DA3C32789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3C22789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift */; };
-		5E4DA3D52789D03E0079CD8C /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DA3D32789D03E0079CD8C /* Hello.swift */; };
-		5E4DA3D7278A5D700079CD8C /* HelloFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */; };
-		5E4DA3D8278A5D700079CD8C /* HelloFFI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E4DA3E4278A76560079CD8C /* Hello in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4DA3E3278A76560079CD8C /* Hello */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E4DA3D8278A5D700079CD8C /* HelloFFI.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,8 +63,7 @@
 		5E4DA3BC2789CCE80079CD8C /* HelloAppleDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloAppleDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4DA3C02789CCE80079CD8C /* HelloAppleDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAppleDemoAppUITests.swift; sourceTree = "<group>"; };
 		5E4DA3C22789CCE80079CD8C /* HelloAppleDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAppleDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5E4DA3D32789D03E0079CD8C /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = SOURCE_ROOT; };
-		5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HelloFFI.xcframework; sourceTree = SOURCE_ROOT; };
+		5E4DA3E1278A764D0079CD8C /* Hello */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Hello; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4DA3D7278A5D700079CD8C /* HelloFFI.xcframework in Frameworks */,
+				5E4DA3E4278A76560079CD8C /* Hello in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +95,12 @@
 		5E4DA3932789CCE70079CD8C = {
 			isa = PBXGroup;
 			children = (
+				5E4DA3E1278A764D0079CD8C /* Hello */,
 				5E4DA39E2789CCE70079CD8C /* HelloAppleDemoApp */,
 				5E4DA3B52789CCE80079CD8C /* HelloAppleDemoAppTests */,
 				5E4DA3BF2789CCE80079CD8C /* HelloAppleDemoAppUITests */,
 				5E4DA39D2789CCE70079CD8C /* Products */,
+				5E4DA3E2278A76530079CD8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,8 +117,6 @@
 		5E4DA39E2789CCE70079CD8C /* HelloAppleDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				5E4DA3D32789D03E0079CD8C /* Hello.swift */,
-				5E4DA3D42789D03E0079CD8C /* HelloFFI.xcframework */,
 				5E4DA39F2789CCE70079CD8C /* AppDelegate.swift */,
 				5E4DA3A12789CCE70079CD8C /* SceneDelegate.swift */,
 				5E4DA3A32789CCE70079CD8C /* ViewController.swift */,
@@ -149,6 +145,13 @@
 			path = HelloAppleDemoAppUITests;
 			sourceTree = "<group>";
 		};
+		5E4DA3E2278A76530079CD8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,8 +167,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				5E4DA3E6278A765D0079CD8C /* PBXTargetDependency */,
 			);
 			name = HelloAppleDemoApp;
+			packageProductDependencies = (
+				5E4DA3E3278A76560079CD8C /* Hello */,
+			);
 			productName = HelloAppleDemoApp;
 			productReference = 5E4DA39C2789CCE70079CD8C /* HelloAppleDemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -283,7 +290,6 @@
 			files = (
 				5E4DA3A42789CCE70079CD8C /* ViewController.swift in Sources */,
 				5E4DA3A02789CCE70079CD8C /* AppDelegate.swift in Sources */,
-				5E4DA3D52789D03E0079CD8C /* Hello.swift in Sources */,
 				5E4DA3A22789CCE70079CD8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +323,10 @@
 			isa = PBXTargetDependency;
 			target = 5E4DA39B2789CCE70079CD8C /* HelloAppleDemoApp */;
 			targetProxy = 5E4DA3BD2789CCE80079CD8C /* PBXContainerItemProxy */;
+		};
+		5E4DA3E6278A765D0079CD8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 5E4DA3E5278A765D0079CD8C /* Hello */;
 		};
 /* End PBXTargetDependency section */
 
@@ -626,6 +636,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E4DA3E3278A76560079CD8C /* Hello */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Hello;
+		};
+		5E4DA3E5278A765D0079CD8C /* Hello */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Hello;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E4DA3942789CCE70079CD8C /* Project object */;
 }
