@@ -3,7 +3,7 @@ STATIC_LIB_NAME := libhello.a
 all:
 	@make build-targets
 	@make bindgen-swift
-	@make assemble-framework
+	@make assemble-frameworks
 	@make xcframeowrk
 	@make cp-xcframeowrk-source
 
@@ -17,7 +17,7 @@ bindgen-swift:
 	sed -i '' 's/module\ HelloFFI/framework\ module\ HelloFFI/' src/HelloFFI.modulemap
 
 assemble-frameworks:
-	find . -type d -name HelloFFI.framework -exec rm -rf {} \;
+	find . -type d -name HelloFFI.framework -exec rm -rf {} \; || echo "rm failed"
 	cd target/x86_64-apple-ios/release && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../misc/apple/Info.plist ./Resources
 	cd target/aarch64-apple-ios-sim/release && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../misc/apple/Info.plist ./Resources
 	cd target/aarch64-apple-ios/release && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../misc/apple/Info.plist ./Resources
