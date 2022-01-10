@@ -9,7 +9,7 @@ Working in progress
 ### iOS
 
 1. Latest Xcode (13.x)
-1. Rust toolchains for iOS: `rustup target add aarch64-apple-ios-sim --toolchain nightly && rustup target add aarch64-apple-ios x86_64-apple-ios`. Check installaion:
+1. Rust toolchains for iOS: `make prepare-apple` or `rustup target add aarch64-apple-ios-sim --toolchain nightly && rustup target add aarch64-apple-ios x86_64-apple-ios`. Check installaion:
     ```shell
     $ rustup target list --installed | grep ios
     aarch64-apple-ios
