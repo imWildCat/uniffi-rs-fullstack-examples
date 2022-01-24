@@ -1,3 +1,4 @@
 namespace Hello {
     string rust_greeting(string name);
-}
+};
+
