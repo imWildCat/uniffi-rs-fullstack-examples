@@ -7,5 +7,6 @@ final class HelloTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //      XCTAssertEqual(Hello.text, "Hello, World!")
+      XCTAssertEqual(rustGreeting(name: "Bob"), "Hello, Bob!")
     }
 }

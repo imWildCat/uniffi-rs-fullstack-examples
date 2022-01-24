@@ -1,6 +1,5 @@
-
-pub fn say_hello(name: String) {
-    println!("Hello, {}!", name);
+pub fn rust_greeting(to: String) -> String {
+    return format!("Hello, {}!", to);
 }
 
 include!(concat!(env!("OUT_DIR"), "/hello.uniffi.rs"));
