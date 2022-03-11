@@ -5,8 +5,8 @@ edition = "2021"
 authors = ["Daohan Chong <wildcat.name@gmail.com>"]
 
 [lib]
-crate-type = ["staticlib", "cdylib"]
 name = "hello"
+crate-type = ["staticlib", "cdylib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

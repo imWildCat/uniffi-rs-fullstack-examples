@@ -35,3 +35,6 @@ xcframeowrk:
 cp-xcframeowrk-source:
 	cp -r target/HelloFFI.xcframework platforms/HelloAppleDemoApp/Hello/Sources
 	cp src/Hello.swift platforms/HelloAppleDemoApp/Hello/Sources/Hello
+
+bindgen-kotlin:
+	uniffi-bindgen generate src/hello.udl --language kotlin --out-dir ./misc/android/UniffiRustExample/app/src/main/java/
