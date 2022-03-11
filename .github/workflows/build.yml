@@ -1,4 +1,4 @@
-name: Swift
+name: Uniffi Builds
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_xcframework:
 
     runs-on: macos-latest
 
@@ -25,3 +25,17 @@ jobs:
         name: HelloFFI.xcframework
         path: hello/target/HelloFFI.xcframework
         retention-days: 7
+
+  build_android:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: r21e
+    - name: ''
+      env:
+        ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+      run: |
+          cd hello/platforms/android/UniffiRustExample
+          ./gradlew cargoBuild --info
