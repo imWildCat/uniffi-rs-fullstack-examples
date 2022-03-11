@@ -17,4 +17,5 @@ src/HelloFFI.modulemap
 src/Hello.swift
 src/HelloFFI.h
 
-HelloAppleDemoApp.xcodeproj/project.xcworkspace/xcuserdata/wildcat.xcuserdatad
+HelloAppleDemoApp.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
+hello/platforms/android/UniffiRustExample/app/src/main/java/uniffi/Hello/Hello.kt
