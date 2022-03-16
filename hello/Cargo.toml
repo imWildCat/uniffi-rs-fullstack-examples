@@ -5,17 +5,17 @@ edition = "2021"
 authors = ["Daohan Chong <wildcat.name@gmail.com>"]
 
 [lib]
-crate-type = ["staticlib", "cdylib"]
 name = "hello"
+crate-type = ["staticlib", "cdylib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-uniffi = "0.16.0"
-uniffi_macros = "0.16.0"
+uniffi = "0.17.0"
+uniffi_macros = "0.17.0"
 
 [build-dependencies]
-uniffi_build = "0.16.0"
+uniffi_build = "0.17.0"
 
 [profile.release]
 opt-level = 'z'     # Optimize for size.

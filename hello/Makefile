@@ -18,6 +18,10 @@ bindgen-swift:
 	uniffi-bindgen generate src/hello.udl --language swift
 	sed -i '' 's/module\ HelloFFI/framework\ module\ HelloFFI/' src/HelloFFI.modulemap
 
+bindgen-kotlin:
+	uniffi-bindgen generate src/hello.udl --language kotlin -o platforms/android/UniffiRustExample/app/src/main/java
+	sed -i '' 's/return "uniffi_Hello"/return "hello"/' platforms/android/UniffiRustExample/app/src/main/java/uniffi/Hello/Hello.kt
+
 assemble-frameworks:
 	find . -type d -name HelloFFI.framework -exec rm -rf {} \; || echo "rm failed"
 	cd target/x86_64-apple-ios/release && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../misc/apple/Info.plist ./Resources

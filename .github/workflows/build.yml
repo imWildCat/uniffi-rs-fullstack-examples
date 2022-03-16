@@ -1,27 +1,48 @@
-name: Swift
+name: Uniffi Builds
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
-
+  build_xcframework:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: |
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
           make prepare-apple
           cd hello
           make all
 
-    - name: 'Upload xcframework'
-      uses: actions/upload-artifact@v2
-      with:
-        name: HelloFFI.xcframework
-        path: hello/target/HelloFFI.xcframework
-        retention-days: 7
+      - name: "Upload xcframework"
+        uses: actions/upload-artifact@v2
+        with:
+          name: HelloFFI.xcframework
+          path: hello/target/HelloFFI.xcframework
+          retention-days: 7
+
+  # build_android:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         lfs: true
+  #     - uses: actions/setup-java@v2
+  #       with:
+  #         distribution: 'microsoft'
+  #         java-version: '11'
+  #     - name: Setup Android SDK
+  #       uses: android-actions/setup-android@v2
+  #     - uses: nttld/setup-ndk@v1
+  #       with:
+  #         ndk-version: r21e
+  #     - name: "Build Android library"
+  #       env:
+  #         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+  #       run: |
+  #         cd hello/platforms/android/UniffiRustExample
+  #         ./gradlew cargoBuild --info
