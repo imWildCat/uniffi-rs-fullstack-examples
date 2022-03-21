@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
-          java-version: 8
+          java-version: 11
           cache: 'gradle'
           # Reference: https://github.com/mozilla/rust-android-gradle/blob/master/.github/workflows/check.yml
       - name: Setup Android SDK
