@@ -41,4 +41,4 @@ cp-xcframeowrk-source:
 	cp src/Hello.swift platforms/apple/Hello/Sources/Hello
 
 android:
-	cd hello/platforms/android/UniffiRustExample && ./gradlew cargoBuild --info
+	cd platforms/android/UniffiRustExample && ./gradlew cargoBuild --info
