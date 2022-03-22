@@ -7,7 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  build_xcframework:
+  build_ios:
+    name: 'Build iOS'
     runs-on: macos-latest
 
     steps:
@@ -26,6 +27,7 @@ jobs:
           retention-days: 7
 
   build_android:
+    name: 'Build Android'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
