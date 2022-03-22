@@ -48,10 +48,12 @@ jobs:
           toolchain: stable
           override: true
           target: aarch64-linux-android
+      - name: "More dependencies"
+        run: |
+          make prepare-android
       - name: "Build Android library"
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
-          make prepare-android
           cd hello/platforms/android/UniffiRustExample
           ./gradlew cargoBuild --info
