@@ -6,6 +6,15 @@ Working in progress
 
 ## Prerequisites
 
+### Rust
+
+Please read <https://www.rust-lang.org/tools/install>.
+
+### Android
+
+1. JDK 11.x, Android SDK and NDK, Android Studio is optional. For more details, please visit [.github/workflows/build.yml](.github/workflows/build.yml).
+2. Install Rust toolchains for Android: `make prepare-android`
+
 ### iOS
 
 1. Latest Xcode (13.x)
@@ -18,6 +27,12 @@ Working in progress
     ```
     Please note that `aarch64-apple-ios-sim` requries the nightly toolchain (<https://doc.rust-lang.org/nightly/rustc/platform-support/aarch64-apple-ios-sim.html>).
 1. Install `uniffi-bindgen`: `cargo install uniffi_bindgen`, details: <https://mozilla.github.io/uniffi-rs/tutorial/Prerequisites.html>
+
+## Get Started
+
+### Hello
+
+Please read [hello/README.md](hello/README.md).
 
 ## License
 

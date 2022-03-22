@@ -7,7 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  build_xcframework:
+  build_ios:
+    name: 'Build iOS'
     runs-on: macos-latest
 
     steps:
@@ -16,7 +17,7 @@ jobs:
         run: |
           make prepare-apple
           cd hello
-          make all
+          make apple
 
       - name: "Upload xcframework"
         uses: actions/upload-artifact@v2
@@ -26,6 +27,7 @@ jobs:
           retention-days: 7
 
   build_android:
+    name: 'Build Android'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -55,5 +57,5 @@ jobs:
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
-          cd hello/platforms/android/UniffiRustExample
-          ./gradlew cargoBuild --info
+          cd hello
+          make android
