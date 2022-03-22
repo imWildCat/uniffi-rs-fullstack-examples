@@ -10,7 +10,7 @@ Please refer to the root [README.md](../README.md).
 
 ### iOS
 
-- Generate binaries, xcframework and Swift binding: `make all`
+- Generate binaries, xcframework and Swift binding: `make apple`
 
 #### With Rust binary: 503K
 
