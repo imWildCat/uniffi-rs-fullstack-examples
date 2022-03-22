@@ -42,6 +42,12 @@ jobs:
       - uses: nttld/setup-ndk@v1
         with:
           ndk-version: r21e
+      - uses: actions-rs/toolchain@v1
+        # Reference: https://github.com/rust-windowing/android-ndk-rs/blob/master/.github/workflows/rust.yml
+        with:
+          toolchain: stable
+          override: true
+          target: aarch64-linux-android
       - name: "Build Android library"
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
