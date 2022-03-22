@@ -1,4 +1,4 @@
-# Todo List Shared
+# Hello example (minimal)
 
 A shared library for the todo list application, which can be used for Android, iOS and other platforms.
 
