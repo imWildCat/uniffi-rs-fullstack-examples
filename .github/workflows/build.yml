@@ -17,7 +17,7 @@ jobs:
         run: |
           make prepare-apple
           cd hello
-          make all
+          make apple
 
       - name: "Upload xcframework"
         uses: actions/upload-artifact@v2
@@ -57,5 +57,4 @@ jobs:
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
-          cd hello/platforms/android/UniffiRustExample
-          ./gradlew cargoBuild --info
+          make android

@@ -39,3 +39,6 @@ xcframeowrk:
 cp-xcframeowrk-source:
 	cp -r target/HelloFFI.xcframework platforms/apple/Hello/Sources
 	cp src/Hello.swift platforms/apple/Hello/Sources/Hello
+
+android:
+	cd hello/platforms/android/UniffiRustExample && ./gradlew cargoBuild --info

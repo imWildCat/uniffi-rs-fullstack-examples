@@ -6,11 +6,14 @@ Working in progress
 
 ## Prerequisites
 
+### Rust
+
+Please read <https://www.rust-lang.org/tools/install>.
+
 ### Android
 
 1. JDK 11.x, Android SDK and NDK, Android Studio is optional. For more details, please visit [.github/workflows/build.yml](.github/workflows/build.yml).
-2. 
-
+2. Install Rust toolchains for Android: `make prepare-android`
 
 ### iOS
 
