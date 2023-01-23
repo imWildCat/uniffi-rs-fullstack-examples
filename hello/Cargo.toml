@@ -1,25 +1,25 @@
 [package]
+authors = ["Daohan Chong <wildcat.name@gmail.com>"]
+edition = "2021"
 name = "hello"
 version = "0.1.0"
-edition = "2021"
-authors = ["Daohan Chong <wildcat.name@gmail.com>"]
 
 [lib]
-name = "hello"
 crate-type = ["staticlib", "cdylib"]
+name = "hello"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-uniffi = "0.17.0"
-uniffi_macros = "0.17.0"
+uniffi = "0.22.0"
+uniffi_macros = "0.22.0"
 
 [build-dependencies]
-uniffi_build = "0.17.0"
+uniffi_build = "0.22.0"
 
 [profile.release]
-opt-level = 'z'     # Optimize for size.
-lto = true          # Enable Link Time Optimization
-codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+codegen-units = 1 # Reduce number of codegen units to increase optimizations.
+lto = true # Enable Link Time Optimization
+opt-level = 'z' # Optimize for size.
 # panic = 'abort'     # Abort on panic
 debug = true # Enable debug symbols. For example, we can use `dwarfdump` to check crash traces.
