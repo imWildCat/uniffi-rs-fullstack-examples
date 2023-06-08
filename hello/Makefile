@@ -8,18 +8,18 @@ apple:
 	@make cp-xcframeowrk-source
 
 build-targets:
-	cargo build --release --target x86_64-apple-ios
-	cargo +nightly build --release --target aarch64-apple-ios-sim
-	cargo +nightly build -Z build-std --release --target aarch64-apple-ios-macabi
-	cargo +nightly build -Z build-std --release --target x86_64-apple-ios-macabi
-	cargo build --release --target aarch64-apple-ios
+	cargo build --lib --release --target x86_64-apple-ios
+	cargo +nightly build --lib --release --target aarch64-apple-ios-sim
+	cargo +nightly build -Z build-std --lib --release --target aarch64-apple-ios-macabi
+	cargo +nightly build -Z build-std --lib --release --target x86_64-apple-ios-macabi
+	cargo build --lib --release --target aarch64-apple-ios
 
 bindgen-swift:
-	uniffi-bindgen generate src/hello.udl --language swift
+	cargo run --features=uniffi/cli --bin uniffi-bindgen generate src/hello.udl --language swift
 	sed -i '' 's/module\ HelloFFI/framework\ module\ HelloFFI/' src/HelloFFI.modulemap
 
 bindgen-kotlin:
-	uniffi-bindgen generate src/hello.udl --language kotlin -o platforms/android/UniffiRustExample/app/src/main/java
+	cargo run --features=uniffi/cli --bin uniffi-bindgen generate src/hello.udl --language kotlin -o platforms/android/UniffiRustExample/app/src/main/java
 	sed -i '' 's/return "uniffi_Hello"/return "hello"/' platforms/android/UniffiRustExample/app/src/main/java/uniffi/Hello/Hello.kt
 
 assemble-frameworks:
