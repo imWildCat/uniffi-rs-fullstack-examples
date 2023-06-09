@@ -10,11 +10,12 @@ cargo {
     module = "../../../.."       // Or whatever directory contains your Cargo.toml
     libname = "hello"          // Or whatever matches Cargo.toml's [package] name.
     targets = ["arm", "x86", "x86_64", "arm64"]
+    extraCargoBuildArguments = ["--lib"]
 }
 
 android {
     compileSdk 31
-//    ndkVersion rootProject.ext.ndkVersion
+    ndkVersion "25.2.9519653"
 
     defaultConfig {
         applicationId "com.demo.mobile.uniffirustexample"
@@ -42,6 +43,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.example.mobile.demo.uniffirustexample'
 }
 
 dependencies {

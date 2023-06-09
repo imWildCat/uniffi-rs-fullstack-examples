@@ -33,17 +33,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           lfs: true
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: 11
+          java-version: '17'
           cache: 'gradle'
           # Reference: https://github.com/mozilla/rust-android-gradle/blob/master/.github/workflows/check.yml
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
-      - uses: nttld/setup-ndk@v1
-        with:
-          ndk-version: r21e
       - uses: actions-rs/toolchain@v1
         # Reference: https://github.com/rust-windowing/android-ndk-rs/blob/master/.github/workflows/rust.yml
         with:
@@ -54,8 +49,5 @@ jobs:
         run: |
           make prepare-android
       - name: "Build Android library"
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-        run: |
-          cd hello
-          make android
+        run: make android
+        working-directory: hello

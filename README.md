@@ -17,7 +17,7 @@ Please read <https://www.rust-lang.org/tools/install>.
 
 ### iOS
 
-1. Latest Xcode (13.x)
+1. Latest Xcode (14.3)
 1. Rust toolchains for iOS: `make prepare-apple` or `rustup target add aarch64-apple-ios-sim --toolchain nightly && rustup target add aarch64-apple-ios x86_64-apple-ios`. Check installaion:
     ```shell
     $ rustup target list --installed | grep ios
