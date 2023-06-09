@@ -15,7 +15,7 @@ cargo {
 
 android {
     compileSdk 31
-//    ndkVersion rootProject.ext.ndkVersion
+    ndkVersion "25.2.9519653"
 
     defaultConfig {
         applicationId "com.demo.mobile.uniffirustexample"
@@ -43,6 +43,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.example.mobile.demo.uniffirustexample'
 }
 
 dependencies {
