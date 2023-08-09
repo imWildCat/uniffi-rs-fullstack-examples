@@ -9,7 +9,7 @@ apple:
 
 build-targets:
 	cargo build --lib --release --target x86_64-apple-ios
-	cargo +nightly build --lib --release --target aarch64-apple-ios-sim
+	cargo build --lib --release --target aarch64-apple-ios-sim
 	cargo +nightly build -Z build-std --lib --release --target aarch64-apple-ios-macabi
 	cargo +nightly build -Z build-std --lib --release --target x86_64-apple-ios-macabi
 	cargo build --lib --release --target aarch64-apple-ios
