@@ -16,7 +16,7 @@ build-targets:
 	cargo build --lib --release --target aarch64-apple-ios
 
 bindgen-swift:
-	cargo run -p uniffi-bindgen generate src/hello.udl --language swift
+	cargo run -p uniffi-bindgen generate --language swift --lib-file $(TARGET_DIR)/aarch64-apple-ios/release/$(STATIC_LIB_NAME) src/hello.udl
 	sed -i '' 's/module\ HelloFFI/framework\ module\ HelloFFI/' src/HelloFFI.modulemap
 
 bindgen-kotlin:

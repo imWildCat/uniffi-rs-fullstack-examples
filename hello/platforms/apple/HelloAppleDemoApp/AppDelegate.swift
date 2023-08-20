@@ -1,6 +1,7 @@
 // 
 
 import UIKit
+//import Hello
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+//    setLoggingDelegate(delegate: self)
     return true
   }
 
@@ -29,3 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: GreetingDelegate {
+  func greetingCalled(to: String) {
+    print("[swift] greeting called to \(to)")
+  }
+}
