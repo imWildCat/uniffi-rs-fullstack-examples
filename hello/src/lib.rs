@@ -1,8 +1,8 @@
-uniffi::include_scaffolding!("hello");
+// uniffi::include_scaffolding!("hello");
 // This is interesting. Because we're supposed to use setup_scaffolding!() at the top.
 // Please refer to <https://mozilla.github.io/uniffi-rs/proc_macro/index.html>
 // I found this sample at: https://github.com/MathieuTricoire/convex-rs-ffi/tree/90fb36ea3dec16b05a8e4f47aa032987b2727122
-// uniffi::setup_scaffolding!();
+uniffi::setup_scaffolding!();
 
 #[uniffi::export(callback_interface)]
 pub trait GreetingDelegate: Send + Sync {
