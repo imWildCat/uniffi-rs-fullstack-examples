@@ -9,7 +9,7 @@ on:
 jobs:
   build_ios:
     name: 'Build iOS'
-    runs-on: macos-latest
+    runs-on: macos-latest-xl
 
     steps:
       - uses: actions/checkout@v2
