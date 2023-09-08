@@ -7,15 +7,19 @@ plugins {
 apply plugin: 'org.mozilla.rust-android-gradle.rust-android'
 
 cargo {
-    module = "../../../.."       // Or whatever directory contains your Cargo.toml
+    prebuiltToolchains = true
+    targetDirectory = "$projectDir/../../../../../target" // because of workspace
+    module = "$projectDir/../../../.."       // Or whatever directory contains your Cargo.toml
     libname = "hello"          // Or whatever matches Cargo.toml's [package] name.
-    targets = ["arm", "x86", "x86_64", "arm64"]
+    pythonCommand = 'python3'
+    profile = 'debug'
+    targets = ["x86_64", "arm64"]
     extraCargoBuildArguments = ["--lib"]
+    verbose = true
 }
 
 android {
-    compileSdk 31
-    ndkVersion "25.2.9519653"
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.demo.mobile.uniffirustexample"
@@ -70,7 +74,5 @@ afterEvaluate {
         }
         def buildType = "${variant.buildType.name.capitalize()}"
         tasks["generate${productFlavor}${buildType}Assets"].dependsOn(tasks["cargoBuild"])
-
-
     }
 }

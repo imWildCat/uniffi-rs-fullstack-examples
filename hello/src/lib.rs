@@ -1,4 +1,5 @@
-uniffi::setup_scaffolding!();
+// uniffi::setup_scaffolding!();
+uniffi::include_scaffolding!("hello");
 // This must be put at the top
 
 

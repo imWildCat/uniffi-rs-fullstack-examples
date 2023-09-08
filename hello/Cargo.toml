@@ -5,21 +5,25 @@ name = "hello"
 version = "0.1.0"
 
 [lib]
-crate-type = ["staticlib", "rlib"]
+crate-type = [
+  "staticlib", # must for iOS
+  "rlib",
+  "cdylib",    # must for Android
+]
 # staticlib would be good enough.
 # adding "rlib" here just in case that we need to call these public interfaces directly from another Rust crate
 name = "hello"
 
 
 [dependencies]
-uniffi = {workspace = true}
+uniffi = { workspace = true }
 
 [build-dependencies]
-uniffi = { workspace = true, features = [ "build" ] }
+uniffi = { workspace = true, features = ["build"] }
 
 [profile.release]
 codegen-units = 1 # Reduce number of codegen units to increase optimizations.
-lto = true # Enable Link Time Optimization
-opt-level = 'z' # Optimize for size.
+lto = true        # Enable Link Time Optimization
+opt-level = 'z'   # Optimize for size.
 # panic = 'abort'     # Abort on panic
 debug = true # Enable debug symbols. For example, we can use `dwarfdump` to check crash traces.
