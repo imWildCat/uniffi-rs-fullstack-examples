@@ -20,6 +20,7 @@ cargo {
 
 android {
     compileSdk 33
+    ndkVersion System.getenv("ANDROID_NDK_VERSION")
 
     defaultConfig {
         applicationId "com.demo.mobile.uniffirustexample"
