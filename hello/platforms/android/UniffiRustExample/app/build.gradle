@@ -13,13 +13,13 @@ cargo {
     libname = "hello"          // Or whatever matches Cargo.toml's [package] name.
     pythonCommand = 'python3'
     profile = 'debug'
-    targets = ["x86_64", "arm64"]
+    targets = ["x86_64", "arm64", "arm", "x86"]
     extraCargoBuildArguments = ["--lib"]
     verbose = true
 }
 
 android {
-    compileSdk 33
+    compileSdk 31
     ndkVersion System.getenv("ANDROID_NDK_VERSION")
 
     defaultConfig {
