@@ -4,6 +4,9 @@ Full documentation of the UniFFI crates can be found [here](https://mozilla.gith
 
 Another demo including building Rust for WASM (WebAssembly): <https://github.com/imWildCat/rust-mobile-web-demo>
 
+If you find this project useful, please consider support me: <https://github.com/sponsors/imWildCat>.
+Thanks!
+
 ## Questions?
 
 <https://github.com/imWildCat/uniffi-rs-fullstack-examples/discussions>
