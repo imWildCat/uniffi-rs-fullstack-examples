@@ -51,7 +51,7 @@ pub fn add(a: i32, b: i32) -> i32 {
 
 #[uniffi::export]
 pub async fn say_after(ms: u64, who: String) -> String {
-    let never = std::future::pending::<()>();
+    let never = pending::<()>();
     timeout(std::time::Duration::from_millis(ms), never)
         .await
         .unwrap_err();
