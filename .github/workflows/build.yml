@@ -8,7 +8,7 @@ on:
 
 jobs:
   build_ios:
-    name: 'Build iOS'
+    name: "Build iOS"
     runs-on: macos-latest
 
     steps:
@@ -26,8 +26,13 @@ jobs:
           path: hello/target/HelloFFI.xcframework
           retention-days: 7
 
+      - name: "Run ios tests"
+        run: |
+          cd hello/platforms/apple
+          xcodebuild -project HelloAppleDemoApp.xcodeproj -scheme HelloAppleDemoApp -destination 'platform=iOS Simulator,name=iPhone 14' test
+
   build_android:
-    name: 'Build Android'
+    name: "Build Android"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -35,9 +40,9 @@ jobs:
           lfs: true
       - uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'gradle'
+          distribution: "temurin"
+          java-version: "17"
+          cache: "gradle"
           # Reference: https://github.com/mozilla/rust-android-gradle/blob/master/.github/workflows/check.yml
       - uses: actions-rs/toolchain@v1
         # Reference: https://github.com/rust-windowing/android-ndk-rs/blob/master/.github/workflows/rust.yml
@@ -45,9 +50,16 @@ jobs:
           toolchain: stable
           override: true
           target: aarch64-linux-android
+      - uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: r21e
+          add-to-path: false
       - name: "More dependencies"
         run: |
           make prepare-android
+        env:
+          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       - name: "Build Android library"
         run: make android
         working-directory: hello

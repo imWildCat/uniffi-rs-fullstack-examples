@@ -20,7 +20,8 @@ cargo {
 
 android {
     compileSdk 31
-    ndkVersion System.getenv("ANDROID_NDK_VERSION")
+    // https://developer.android.com/studio/projects/configure-agp-ndk
+    ndkPath System.getenv("ANDROID_NDK_HOME")
 
     defaultConfig {
         applicationId "com.demo.mobile.uniffirustexample"
