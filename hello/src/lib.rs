@@ -5,7 +5,7 @@ uniffi::include_scaffolding!("hello");
 // uniffi::setup_scaffolding!();
 use async_std::future::{pending, timeout};
 
-// #[uniffi::export(callback_interface)]
+#[uniffi::export(callback_interface)]
 pub trait GreetingDelegate: Send + Sync {
     fn greeting_called(&self, to: String);
 }
@@ -27,7 +27,7 @@ impl GreetingLogger {
 static LOGGER_INSTANCE: once_cell::sync::OnceCell<GreetingLogger> =
     once_cell::sync::OnceCell::new();
 
-// #[uniffi::export]
+#[uniffi::export]
 pub fn set_logging_delegate(delegate: Box<dyn GreetingDelegate>) {
     let logger = GreetingLogger::new(delegate);
     let result = LOGGER_INSTANCE.set(logger);
@@ -36,7 +36,7 @@ pub fn set_logging_delegate(delegate: Box<dyn GreetingDelegate>) {
     }
 }
 
-// #[uniffi::export]
+#[uniffi::export]
 pub fn rust_greeting(to: String) -> String {
     if let Some(logger) = LOGGER_INSTANCE.get() {
         logger.greeting_called(to.clone());
