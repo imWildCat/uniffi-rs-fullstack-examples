@@ -3,6 +3,7 @@ uniffi::include_scaffolding!("hello");
 // Please refer to <https://mozilla.github.io/uniffi-rs/proc_macro/index.html>
 // I found this sample at: https://github.com/MathieuTricoire/convex-rs-ffi/tree/90fb36ea3dec16b05a8e4f47aa032987b2727122
 // uniffi::setup_scaffolding!();
+use async_std::future::{pending, timeout};
 
 // #[uniffi::export(callback_interface)]
 pub trait GreetingDelegate: Send + Sync {
@@ -46,4 +47,13 @@ pub fn rust_greeting(to: String) -> String {
 #[uniffi::export]
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
+}
+
+#[uniffi::export]
+pub async fn say_after(ms: u64, who: String) -> String {
+    let never = std::future::pending::<()>();
+    timeout(std::time::Duration::from_millis(ms), never)
+        .await
+        .unwrap_err();
+    format!("Hello, {who}!")
 }

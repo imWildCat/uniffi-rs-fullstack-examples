@@ -12,6 +12,7 @@ name = "hello"
 
 
 [dependencies]
+async-std = "1.12.0"
 once_cell = "1.18.0"
 uniffi = { workspace = true }
 # uniffi_bindgen = { workspace = true }
