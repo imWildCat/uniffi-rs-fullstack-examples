@@ -5,7 +5,7 @@ name = "hello"
 version = "0.1.0"
 
 [lib]
-crate-type = ["staticlib", "rlib"]
+crate-type = ["staticlib", "rlib", "cdylib"]
 # staticlib would be good enough.
 # adding "rlib" here just in case that we need to call these public interfaces directly from another Rust crate
 name = "hello"
