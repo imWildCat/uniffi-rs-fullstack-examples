@@ -57,3 +57,15 @@ pub async fn say_after(ms: u64, who: String) -> String {
         .unwrap_err();
     format!("Hello, {who}!")
 }
+
+#[derive(uniffi::Record)]
+pub struct RustDemoObj {
+    pub value: i64,
+}
+
+#[uniffi::export]
+pub fn add_obj(a: &RustDemoObj, b: &RustDemoObj) -> RustDemoObj {
+    RustDemoObj {
+        value: a.value + b.value,
+    }
+}
