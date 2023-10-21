@@ -13,8 +13,5 @@ opt-level = 3     # All optimizations # https://doc.rust-lang.org/cargo/referenc
 debug = true # Enable debug symbols. For example, we can use `dwarfdump` to check crash traces.
 
 [workspace.dependencies]
-# uniffi = { version = "0.24" }
-# uniffi_bindgen = { version = "0.24" }
-# Note uniffi 0.24 has bugs so some interfaces are not created.
-uniffi = { git = "https://github.com/mozilla/uniffi-rs" }
-uniffi_bindgen = { git = "https://github.com/mozilla/uniffi-rs" }
+uniffi = { version = "0.25" }
+uniffi_bindgen = { version = "0.25" }
