@@ -7,7 +7,7 @@ Another demo including building Rust for WASM (WebAssembly): <https://github.com
 If you find this project useful, please consider support me: <https://github.com/sponsors/imWildCat>.
 Thanks!
 
-## Paid variants 🚀
+## Cross-platform Rust Consulting 🚀
 
 If you're interested in a single Rust codebase for iOS, Android, Electron, Tauri, and how to bridge between Rust, Native and Web Views, I offer consalting services regarding cross-platform Rust.
 
