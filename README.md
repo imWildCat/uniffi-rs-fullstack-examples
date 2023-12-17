@@ -7,6 +7,12 @@ Another demo including building Rust for WASM (WebAssembly): <https://github.com
 If you find this project useful, please consider support me: <https://github.com/sponsors/imWildCat>.
 Thanks!
 
+## Donations
+
+If you find this project useful, please considering sponsor me: <https://github.com/sponsors/imWildCat>
+Any number is much appreciated.
+I made this demo using my leasure time, for free. Without incentives, it can hardly be continued.
+
 ## Questions?
 
 <https://github.com/imWildCat/uniffi-rs-fullstack-examples/discussions>
