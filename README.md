@@ -13,6 +13,14 @@ If you're interested in a single Rust codebase for iOS, Android, Electron, Tauri
 
 Please feel free to drop me an email if you'd like to. Our solution is able to help you scale from zero to one million users, with minimum development cost.
 
+Things we can cover:
+
+* Super fast pipeline / continuous integration (CI) for cross-platform Rust (incl. iOS, macOS, Android, Windows and Linux, on GitHub or GitLab)
+* Common debugging techniques (incl. async/multi-threaded Rust for all platforms)
+* Performant bridge between Rust and Native/Web
+* Project structure and development strategy
+
+
 ## Questions?
 
 <https://github.com/imWildCat/uniffi-rs-fullstack-examples/discussions>
