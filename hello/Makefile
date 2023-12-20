@@ -5,8 +5,8 @@ apple:
 	@make build-targets
 	@make bindgen-swift
 	@make assemble-frameworks
-	@make xcframeowrk
-	@make cp-xcframeowrk-source
+	@make xcframework
+	@make cp-xcframework-source
 
 build-targets:
 	cargo build --lib --target x86_64-apple-ios
@@ -32,13 +32,13 @@ assemble-frameworks:
 	cd $(TARGET_DIR)/aarch64-apple-ios-macabi/debug && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../hello/src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../hello/src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../hello/misc/apple/Info.plist ./Resources
 	cd $(TARGET_DIR)/x86_64-apple-ios-macabi/debug && mkdir -p HelloFFI.framework && cd HelloFFI.framework && mkdir Headers Modules Resources && cp ../../../../hello/src/HelloFFI.modulemap ./Modules/module.modulemap && cp ../../../../hello/src/HelloFFI.h ./Headers/HelloFFI.h && cp ../$(STATIC_LIB_NAME) ./HelloFFI && cp ../../../../hello/misc/apple/Info.plist ./Resources
 
-xcframeowrk:
+xcframework:
 	lipo -create $(TARGET_DIR)/x86_64-apple-ios/debug/HelloFFI.framework/HelloFFI $(TARGET_DIR)/aarch64-apple-ios-sim/debug/HelloFFI.framework/HelloFFI -output $(TARGET_DIR)/aarch64-apple-ios-sim/debug/HelloFFI.framework/HelloFFI
 	lipo -create $(TARGET_DIR)/x86_64-apple-ios-macabi/debug/HelloFFI.framework/HelloFFI $(TARGET_DIR)/aarch64-apple-ios-macabi/debug/HelloFFI.framework/HelloFFI -output $(TARGET_DIR)/aarch64-apple-ios-macabi/debug/HelloFFI.framework/HelloFFI
 	rm -rf $(TARGET_DIR)/HelloFFI.xcframework || echo "skip removing"
 	xcodebuild -create-xcframework -framework $(TARGET_DIR)/aarch64-apple-ios/debug/HelloFFI.framework -framework $(TARGET_DIR)/aarch64-apple-ios-sim/debug/HelloFFI.framework -framework $(TARGET_DIR)/aarch64-apple-ios-macabi/debug/HelloFFI.framework -output $(TARGET_DIR)/HelloFFI.xcframework
 
-cp-xcframeowrk-source:
+cp-xcframework-source:
 	cp -r $(TARGET_DIR)/HelloFFI.xcframework platforms/apple/Hello/Sources
 	cp src/Hello.swift platforms/apple/Hello/Sources/Hello
 
