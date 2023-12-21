@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import uniffi.Hello.*
 import com.example.mobile.demo.uniffirustexample.databinding.ActivityMainBinding
 
@@ -38,8 +39,9 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        val result = rustGreeting("foo")
-        print(result)
+
+        val result = rustGreeting("This is from Rust")
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
