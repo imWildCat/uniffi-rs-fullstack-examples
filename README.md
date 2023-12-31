@@ -7,6 +7,17 @@ Another demo including building Rust for WASM (WebAssembly): <https://github.com
 If you find this project useful, please consider support me: <https://github.com/sponsors/imWildCat>.
 Thanks!
 
+## eBook is Coming!
+
+I'm writing an eBook about cross-platform Rust development, including iOS, Android, Electron, Tauri, and how to bridge between Rust and Native.
+It will be published in Q1, 2024. Please stay tuned!
+
+The current pre-order price is $99.99. You can pre-order it [here](https://s.catstudio.app/checkout/buy/91fb8ba7-25a9-4b11-a1ea-8e68a967c6a5).
+Once published, the price will be increased to $199.99.
+
+[![b0be8f7c-35e6-44c1-bec5-74d5726b62f5](https://github.com/imWildCat/uniffi-rs-fullstack-examples/assets/2396817/ea4c3341-df3b-4e07-a972-e872d2fe2caf)](https://s.catstudio.app/checkout/buy/91fb8ba7-25a9-4b11-a1ea-8e68a967c6a5)
+
+
 ## Cross-platform Rust Consulting 🚀
 
 If you're interested in a single Rust codebase for iOS, Android, Electron, Tauri, and how to bridge between Rust, Native and Web Views, I offer consalting services regarding cross-platform Rust.
@@ -19,35 +30,6 @@ Things we can cover:
 * Common debugging techniques (incl. async/multi-threaded Rust for all platforms)
 * Performant bridge between Rust and Native/Web
 * Project structure and development strategy
-
-
-## Questions?
-
-<https://github.com/imWildCat/uniffi-rs-fullstack-examples/discussions>
-
-## Prerequisites
-
-### Rust
-
-Please read <https://www.rust-lang.org/tools/install>.
-
-### Android
-
-1. JDK 11.x, Android SDK and NDK, Android Studio is optional. For more details, please visit [.github/workflows/build.yml](.github/workflows/build.yml).
-2. Install Rust toolchains for Android: `make prepare-android`
-
-### iOS
-
-1. Latest Xcode (14.3)
-1. Rust toolchains for iOS: `make prepare-apple` or `rustup target add aarch64-apple-ios-sim --toolchain nightly && rustup target add aarch64-apple-ios x86_64-apple-ios`. Check installaion:
-    ```shell
-    $ rustup target list --installed | grep ios
-    aarch64-apple-ios
-    aarch64-apple-ios-sim
-    x86_64-apple-ios
-    ```
-    Please note that `aarch64-apple-ios-sim` requries the nightly toolchain (<https://doc.rust-lang.org/nightly/rustc/platform-support/aarch64-apple-ios-sim.html>).
-1. Install `uniffi-bindgen`: `cargo install uniffi_bindgen`, details: <https://mozilla.github.io/uniffi-rs/tutorial/Prerequisites.html>
 
 ## Get Started
 
